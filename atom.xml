@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sakurapure.github.io/"/>
-  <updated>2020-04-29T11:08:32.496Z</updated>
+  <updated>2020-05-02T05:38:22.446Z</updated>
   <id>https://sakurapure.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Markdown快速入手</title>
+    <link href="https://sakurapure.github.io/2020/05/02/Markdown%E5%BF%AB%E9%80%9F%E5%85%A5%E6%89%8B/"/>
+    <id>https://sakurapure.github.io/2020/05/02/Markdown%E5%BF%AB%E9%80%9F%E5%85%A5%E6%89%8B/</id>
+    <published>2020-05-02T04:45:39.000Z</published>
+    <updated>2020-05-02T05:38:22.446Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文仅为Markdown的一般常用指令，本文所包含的指令可以被一些软件（如：typora）自带的快捷方式替代</p><a id="more"></a><h2 id="Markdown学习"><a href="#Markdown学习" class="headerlink" title="Markdown学习"></a>Markdown学习</h2><h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码块语法</span></span><br><span class="line">​```+语言名称</span><br></pre></td></tr></table></figure><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//标题语法</span></span><br><span class="line">#一级标题</span><br><span class="line">##二级标题</span><br><span class="line">###三级标题</span><br><span class="line">####四级标题</span><br><span class="line">#####五级标题</span><br><span class="line">######六级标题</span><br></pre></td></tr></table></figure><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加粗</span></span><br><span class="line">**<span class="number">1</span>**</span><br><span class="line"><span class="comment">//代码高亮</span></span><br><span class="line">==unv==</span><br><span class="line"><span class="comment">//删除线</span></span><br><span class="line">~~被删除文字~~</span><br><span class="line"><span class="comment">//斜体</span></span><br><span class="line">*斜*</span><br></pre></td></tr></table></figure><p>//加粗<br><strong>1</strong><br>//代码高亮<br>==unv==<br>//删除线<br><del>被删除文字</del><br>//斜体<br><em>斜</em></p><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引用</span></span><br><span class="line">&gt;作者：某某某</span><br><span class="line">&gt;&gt;作者：XXX</span><br><span class="line">&gt;&gt;&gt;作者</span><br></pre></td></tr></table></figure><blockquote><p>作者：某某某</p><blockquote><p>作者：XXX</p><blockquote><p>作者</p></blockquote></blockquote></blockquote><h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//分割线</span></span><br><span class="line">---</span><br><span class="line"><span class="comment">//分割线2</span></span><br><span class="line">***</span><br></pre></td></tr></table></figure><hr><hr><h2 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在线图片/本地图片</span></span><br><span class="line">![二次元](/img/<span class="number">222</span>.png)--图片路径</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2020/05/02/JvApfe.jpg" alt="JvApfe.jpg"></p><h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//超链接语法</span></span><br><span class="line">[超链接内容，例：百度](https:/www.baidu.com)</span><br></pre></td></tr></table></figure><p>//超链接语法<br><a href="https:/www.baidu.com">百度</a></p><h2 id="列表语法"><a href="#列表语法" class="headerlink" title="列表语法"></a>列表语法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//无序列表</span></span><br><span class="line">- 目录<span class="number">1</span></span><br><span class="line">- 目录<span class="number">2</span></span><br><span class="line">- 目录<span class="number">3</span></span><br><span class="line"><span class="comment">//有序列表</span></span><br><span class="line">数字键+. +名称</span><br></pre></td></tr></table></figure><ul><li>目录1</li><li>目录2</li><li>目录3</li></ul><ol><li>首页</li><li>分类</li><li>标签</li></ol><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><table><thead><tr><th>成绩</th><th>语文</th><th>化学</th></tr></thead><tbody><tr><td></td><td>150</td><td>100</td></tr></tbody></table><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//表格代码</span></span><br><span class="line">| 成绩 | 语文 | 化学 |</span><br><span class="line">| ---- | ---- | ---- |</span><br><span class="line">|      | <span class="number">150</span>  | <span class="number">100</span>  |</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文仅为Markdown的一般常用指令，本文所包含的指令可以被一些软件（如：typora）自带的快捷方式替代&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Markdown" scheme="https://SakuraPure.github.io/tags/Markdown/"/>
+    
+      <category term="教程" scheme="https://SakuraPure.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
