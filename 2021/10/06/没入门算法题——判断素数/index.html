@@ -16,7 +16,7 @@
     <meta name="description" content="我菜逼这个都不会写，赶紧写个题解记一记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="没入门算法题——判断素数">
-<meta property="og:url" content="http://example.com/2021/10/06/%E6%B2%A1%E5%85%A5%E9%97%A8%E7%AE%97%E6%B3%95%E9%A2%98%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E7%B4%A0%E6%95%B0/index.html">
+<meta property="og:url" content="http://www.unmovia.com/2021/10/06/%E6%B2%A1%E5%85%A5%E9%97%A8%E7%AE%97%E6%B3%95%E9%A2%98%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E7%B4%A0%E6%95%B0/index.html">
 <meta property="og:site_name" content="停舟之处">
 <meta property="og:description" content="我菜逼这个都不会写，赶紧写个题解记一记">
 <meta property="og:locale" content="zh_CN">
@@ -25,17 +25,17 @@
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2021/10/467eecc79973865b.jpg">
 <meta property="article:published_time" content="2021-10-06T14:15:09.663Z">
 <meta property="article:modified_time" content="2021-10-07T11:13:35.391Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="SakuraPure">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="c">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2021/10/467eecc79973865b.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
-    <link rel="stylesheet" href="/css/style.css?v=1633656574496">
+    <link rel="stylesheet" href="/css/style.css?v=1633656812006">
      
     
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1633656574496">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1633656812006">
     
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="停舟之处" type="application/atom+xml">
 </head>
@@ -49,15 +49,15 @@
                 <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
                 <div class="mdui-toolbar-spacer"></div>
                 <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-                <a href="/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="https://avatars.githubusercontent.com/u/64423731?v=4" alt="John Doe"></a>
+                <a href="/" title="SakuraPure" class="mdui-btn mdui-btn-icon"><img src="https://avatars.githubusercontent.com/u/64423731?v=4" alt="SakuraPure"></a>
             </div>
         </div>
     </div>
     <div id="nexmoe-header">
         <div class="nexmoe-drawer mdui-drawer" id="drawer">
     <div class="nexmoe-avatar mdui-ripple">
-        <a href="/" title="John Doe">
-            <img src="https://avatars.githubusercontent.com/u/64423731?v=4" alt="John Doe" alt="John Doe">
+        <a href="/" title="SakuraPure">
+            <img src="https://avatars.githubusercontent.com/u/64423731?v=4" alt="SakuraPure" alt="SakuraPure">
         </a>
     </div>
     <div class="nexmoe-count">
@@ -158,7 +158,7 @@
     
 </aside>
     <div class="nexmoe-copyright">
-        &copy; 2021 John Doe
+        &copy; 2021 SakuraPure
         Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
         & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
         <br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://i.dawnlab.me/c0268c1e6cfd0863d6ba35be1575941a.png" width="150px"></a><script data-ad-client="ca-pub-2058306854838448" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -212,8 +212,8 @@
   
       
     <div class="nexmoe-post-copyright">
-        <strong>Author：</strong>John Doe<br>
-        <strong>Link：</strong><a href="http://example.com/2021/10/06/%E6%B2%A1%E5%85%A5%E9%97%A8%E7%AE%97%E6%B3%95%E9%A2%98%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E7%B4%A0%E6%95%B0/" title="http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;10&#x2F;06&#x2F;%E6%B2%A1%E5%85%A5%E9%97%A8%E7%AE%97%E6%B3%95%E9%A2%98%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E7%B4%A0%E6%95%B0&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;10&#x2F;06&#x2F;%E6%B2%A1%E5%85%A5%E9%97%A8%E7%AE%97%E6%B3%95%E9%A2%98%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E7%B4%A0%E6%95%B0&#x2F;</a><br>
+        <strong>Author：</strong>SakuraPure<br>
+        <strong>Link：</strong><a href="http://www.unmovia.com/2021/10/06/%E6%B2%A1%E5%85%A5%E9%97%A8%E7%AE%97%E6%B3%95%E9%A2%98%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E7%B4%A0%E6%95%B0/" title="http:&#x2F;&#x2F;www.unmovia.com&#x2F;2021&#x2F;10&#x2F;06&#x2F;%E6%B2%A1%E5%85%A5%E9%97%A8%E7%AE%97%E6%B3%95%E9%A2%98%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E7%B4%A0%E6%95%B0&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;www.unmovia.com&#x2F;2021&#x2F;10&#x2F;06&#x2F;%E6%B2%A1%E5%85%A5%E9%97%A8%E7%AE%97%E6%B3%95%E9%A2%98%E2%80%94%E2%80%94%E5%88%A4%E6%96%AD%E7%B4%A0%E6%95%B0&#x2F;</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
         
@@ -291,7 +291,7 @@
 
  
 
-<script async src="/js/app.js?v=1633656574512"></script>
+<script async src="/js/app.js?v=1633656812019"></script>
 
 
 
