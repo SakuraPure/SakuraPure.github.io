@@ -6,7 +6,7 @@
   <link href="http://www.unmovia.com/atom.xml" rel="self"/>
   
   <link href="http://www.unmovia.com/"/>
-  <updated>2021-11-01T10:54:00.951Z</updated>
+  <updated>2022-10-19T12:57:08.000Z</updated>
   <id>http://www.unmovia.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面向对象编程笔记</title>
+    <link href="http://www.unmovia.com/article/fb2145ea.html"/>
+    <id>http://www.unmovia.com/article/fb2145ea.html</id>
+    <published>2022-10-19T12:37:31.407Z</published>
+    <updated>2022-10-19T12:57:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>仍在更新中…<span id="more"></span></p><hr><h3 id="静态字段和静态方法"><a href="#静态字段和静态方法" class="headerlink" title="静态字段和静态方法"></a>静态字段和静态方法</h3><h4 id="静态字段"><a href="#静态字段" class="headerlink" title="静态字段"></a>静态字段</h4><p>不推荐用实例变量.静态字段去访问静态字段，因为在java程序中，实例对象并没有静态字段。编译器可以根据实例类型自动转换为类名.静态字段来访问静态字段。<br>可以把静态字段理解为描述class本身的字段。</p><h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>调用静态方法必须通过一个是来变量，但调用静态方法可以直接通过类名来调用。<br>因为静态方法属于class而不属于实例。</p><h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>在继承关系中，子类如果定义了一个与父类方法签名完全相同的方法，被称为覆写（Override）。<br>方法名相同，方法参数不同，是不同的方法。<br>方法名相同，方法返回值不同，是不同的方法。<br>java的实例方法调用是基于运行时的实际类型的动态调用，而不是变量的声明类型。<br>多态是指，针对某个类型的方法调用，其真正执行的方法取决于运行时期实际类型的方法。<br>多态的特性就是运行时才能动态决定调用的子类方法。<br>在子类的覆写方法中，如果要调用父类被覆写的方法，可以通过super来调用。<br>用final修饰的方法不能被覆写。<br>用final修饰的类不能被继承。<br>用final修饰的字段在初始化后不能被修改。</p><h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><p>如果父类的方法目的是让子类去覆写他本身没有任何功能，可以把父类的方法定义成abstract方法。<br>类包含抽象方法必须把类本身也声明为abstract才能正确编译他。这样的类就是抽象类，我们无法实例化抽象类。<br>我们可以通过抽象类去引用具体子类的实例。</p><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>如果一个抽象类只有抽象方法，就可以把该抽象类改写为接口:interface<br>接口的方法的修饰字段不用写出来都是public abstract。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;仍在更新中…</summary>
+    
+    
+    
+    <category term="学习" scheme="http://www.unmovia.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="http://www.unmovia.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>英语笔记2</title>
