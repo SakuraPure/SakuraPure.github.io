@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+
+<head>
+    
+    <title>简单写一个Java Swing图形界面程序——算术题测试 - 停舟之处</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="https://s3.bmp.ovh/imgs/2021/10/1a8de202c4b7e426.png" type="image/png" />
+    <meta name="description" content="其实是应付java期末作业…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单写一个Java Swing图形界面程序——算术题测试">
+<meta property="og:url" content="http://www.unmovia.com/article/9fcb1401.html">
+<meta property="og:site_name" content="停舟之处">
+<meta property="og:description" content="其实是应付java期末作业…">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.uuu.ovh/imgs/2022/12/08/19f39532a669d769.png">
+<meta property="article:published_time" content="2022-12-08T05:37:02.612Z">
+<meta property="article:modified_time" content="2022-12-08T06:49:47.225Z">
+<meta property="article:author" content="SakuraPure">
+<meta property="article:tag" content="程序设计">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.uuu.ovh/imgs/2022/12/08/19f39532a669d769.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+    <link rel="stylesheet" href="/css/style.css?v=1670482220370">
+     
+    
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1670482220370">
+    
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="停舟之处" type="application/atom+xml">
+</head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="SakuraPure" class="mdui-btn mdui-btn-icon"><img src="https://avatars.githubusercontent.com/u/64423731?v=4" alt="SakuraPure"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="SakuraPure">
+            <img src="https://avatars.githubusercontent.com/u/64423731?v=4" alt="SakuraPure" alt="SakuraPure">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>12</div>
+        <div><span>Tags</span>11</div>
+        <div><span>Categories</span>5</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive/archives.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="tencent://message/?uin=2450905209" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/31094008" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/SakuraPure" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Categories</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/互联网收集/">互联网收集</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/千恋☆万花/">千恋☆万花</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/学习/">学习</a>
+          <span class="category-list-count">4</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/抒己/">抒己</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/没入门算法/">没入门算法</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/" style="font-size: 10px;">二次元</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">程序设计</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15px;">算法</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 15px;">编程</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 15px;">英语</a> <a href="/tags/%E8%90%BD/" style="font-size: 10px;">落</a> <a href="/tags/%E8%B4%B4%E5%90%A7/" style="font-size: 10px;">贴吧</a>
+    </div>
+    
+  </div>
+
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 SakuraPure
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://i.dawnlab.me/c0268c1e6cfd0863d6ba35be1575941a.png" width="150px"></a><script data-ad-client="ca-pub-2058306854838448" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: NaN%;"> 
+              <img data-src="https://s3.uuu.ovh/imgs/2022/12/08/6bcb19f4dab98c4f.jpg" data-sizes="auto" alt="简单写一个Java Swing图形界面程序——算术题测试" class="lazyload">
+              <h1>简单写一个Java Swing图形界面程序——算术题测试</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年12月08日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
+</div>
+
+      
+
+      <p>其实是应付java期末作业…<span id="more"></span></p>
+<hr>
+<p>​        一开始看图形界面觉得挺麻烦，一想到按钮啥的功能怎么实现，各个组件怎么联系起来就觉得很难受，网络上的代码看了看要么就是太古老要么就是太丑了，最后还是想自己写个吧虽然也写的不会好到哪里去，作业里给了好多可以实现的程序，但怎奈我比较懒终于是选了一个自己觉得简单的吧。</p>
+<p>​        java图形界面程序主要用的java swing，怎么学的呢也就是在b站找了门课然后在网站查一些类里面的函数啥的，我学下来觉得这个java swing主要还是需要有些oop思维，我在看教程时弹幕有很多没有系统性学过oop的觉得很难入门看不懂教程，如果有比较好的oop的思维那java swing我觉得就是看看帮助文档的事情，但光看也不行，亲自动手实践下，主要也是前端知识，写起来又有趣又枯燥吧哈哈哈。</p>
+<p>​        java swing的学习框架是</p>
+<ul>
+<li>JFrame窗口</li>
+<li>JPanel面板</li>
+<li>JButton按钮、JLable标签</li>
+<li>布局管理器</li>
+<li>事件监听</li>
+<li>JTextField文本框</li>
+</ul>
+<p>这是最基本的，用这些基本可以实现最为简单的程序，当然剩下的知识也不会太复杂。</p>
+<hr>
+<p>程序运行截图</p>
+<p><img src="https://s3.uuu.ovh/imgs/2022/12/08/19f39532a669d769.png"></p>
+<p>下面是程序的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> javax.swing.*;<br><span class="hljs-keyword">import</span> javax.swing.border.EmptyBorder;<br><span class="hljs-keyword">import</span> java.awt.*;<br><span class="hljs-keyword">import</span> java.awt.event.ActionEvent;<br><span class="hljs-keyword">import</span> java.awt.event.ActionListener;<br><span class="hljs-keyword">import</span> java.util.Random;<br><br><span class="hljs-comment">//主函数用来启动</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">question</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        <span class="hljs-keyword">new</span> MyFrame().loadFrame();<br>    &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyFrame</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">JFrame</span> </span>&#123;<br>    <span class="hljs-comment">//两个文本框</span><br>    JTextField jt1 = <span class="hljs-keyword">new</span> JTextField(<span class="hljs-number">20</span>);<span class="hljs-comment">//用于展示算数表达式</span><br>    JTextField jt2 = <span class="hljs-keyword">new</span> JTextField(<span class="hljs-number">10</span>);<span class="hljs-comment">//用于用户填写答案</span><br>    <span class="hljs-keyword">int</span> nums=<span class="hljs-number">10</span>, grade=<span class="hljs-number">0</span>, rans;<span class="hljs-comment">//分别是题目数，成绩，正确答案</span><br><br>    <span class="hljs-comment">//加载窗口程序的方法</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">loadFrame</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-comment">//窗口程序参数设置</span><br>        setBounds(<span class="hljs-number">300</span>, <span class="hljs-number">300</span>, <span class="hljs-number">400</span>, <span class="hljs-number">170</span>);<span class="hljs-comment">//设置窗口弹出的位置和窗口的大小</span><br>        setVisible(<span class="hljs-keyword">true</span>);<span class="hljs-comment">//设置窗口的可见性</span><br>        setDefaultCloseOperation(<span class="hljs-number">3</span>);<span class="hljs-comment">//设置关闭方式其中参数3是直接结束整个进程</span><br><br>        <span class="hljs-comment">//设置面板</span><br>        JPanel jp1 = <span class="hljs-keyword">new</span> JPanel(<span class="hljs-keyword">new</span> GridLayout(<span class="hljs-number">3</span>, <span class="hljs-number">1</span>));<span class="hljs-comment">//网格布局3行一列</span><br>        JPanel jp2 = <span class="hljs-keyword">new</span> JPanel(<span class="hljs-keyword">new</span> FlowLayout(FlowLayout.CENTER, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>));<span class="hljs-comment">//流式布局居中显示5,5位间隙大小</span><br>        JPanel jp3 = <span class="hljs-keyword">new</span> JPanel(<span class="hljs-keyword">new</span> FlowLayout(FlowLayout.CENTER, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>));<br>        JPanel jp4 = <span class="hljs-keyword">new</span> JPanel(<span class="hljs-keyword">new</span> FlowLayout(FlowLayout.CENTER, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>));<br>        <span class="hljs-comment">//面板的嵌套</span><br>        jp1.add(jp2);<br>        jp1.add(jp3);<br>        jp1.add(jp4);<br>        <span class="hljs-comment">//将主面板加入到frame窗口中</span><br>        add(jp1);<br><br>        <span class="hljs-comment">//设置标签</span><br>        JLabel jLabel1 = <span class="hljs-keyword">new</span> JLabel();<br>        JLabel jLabel2 = <span class="hljs-keyword">new</span> JLabel();<br>        jLabel1.setText(<span class="hljs-string">&quot;=&quot;</span>);<span class="hljs-comment">//设置标签内容</span><br>        jLabel2.setText(<span class="hljs-string">&quot;算数测验,每次生成10道题&quot;</span>);<br><br>        <span class="hljs-comment">//设置按钮</span><br>        JButton jb1 = <span class="hljs-keyword">new</span> JButton(<span class="hljs-string">&quot;生成&quot;</span>);<br>        JButton jb2 = <span class="hljs-keyword">new</span> JButton(<span class="hljs-string">&quot;检验&quot;</span>);<br>        jb2.setEnabled(<span class="hljs-keyword">false</span>);<span class="hljs-comment">//设置按钮为不可用</span><br>        JButton jb3 = <span class="hljs-keyword">new</span> JButton(<span class="hljs-string">&quot;重制&quot;</span>);<br><br>        jt1.setEnabled(<span class="hljs-keyword">false</span>);<span class="hljs-comment">//设置文本框用户不可编辑</span><br><br>        <span class="hljs-comment">//将标签、文本框、按钮分别按需要的顺序加入到面板中</span><br>        jp2.add(jLabel2);<br>        jp3.add(jt1);<br>        jp3.add(jLabel1);<br>        jp3.add(jt2);<br>        jp4.add(jb1);<br>        jp4.add(jb2);<br>        jp4.add(jb3);<br><br>        <span class="hljs-comment">//采用匿名内部类的方式为按钮编写事件监听</span><br>        jb1.addActionListener(<span class="hljs-keyword">new</span> ActionListener() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">actionPerformed</span><span class="hljs-params">(ActionEvent e)</span> </span>&#123;<br>                jt1.setText(gNums());<span class="hljs-comment">//设置文本框文本</span><br>                jb1.setEnabled(<span class="hljs-keyword">false</span>);<br>                jb2.setEnabled(<span class="hljs-keyword">true</span>);<br>                jt2.setText(<span class="hljs-string">&quot;&quot;</span>);<br>                jLabel2.setText(<span class="hljs-string">&quot;请输入你的答案并按下检测按钮&quot;</span>);<br>            &#125;<br>        &#125;);<br><br>        jb2.addActionListener(<span class="hljs-keyword">new</span> ActionListener() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">actionPerformed</span><span class="hljs-params">(ActionEvent e)</span> </span>&#123;<br>                nums--;<br>                <span class="hljs-keyword">if</span>(Integer.parseInt(jt2.getText())!=rans)&#123;<br>                    grade+=<span class="hljs-number">0</span>;<br>                    jLabel2.setText(<span class="hljs-string">&quot;您的答案错误,剩余&quot;</span>+nums+<span class="hljs-string">&quot;道题，得分为&quot;</span>+grade);<br>                &#125;<br>                <span class="hljs-keyword">else</span>&#123;<br>                    grade+=<span class="hljs-number">10</span>;<br>                    jLabel2.setText(<span class="hljs-string">&quot;您的答案正确,剩余&quot;</span>+nums+<span class="hljs-string">&quot;道题，得分为&quot;</span>+grade);<br>                &#125;<br>                <span class="hljs-keyword">if</span>(nums!=<span class="hljs-number">0</span>)&#123;<br>                    jb1.setText(<span class="hljs-string">&quot;下一道&quot;</span>);<br>                    jb1.setEnabled(<span class="hljs-keyword">true</span>);<br>                    jb2.setEnabled(<span class="hljs-keyword">false</span>);<br>                &#125;<br>                <span class="hljs-keyword">else</span>&#123;<br>                    jLabel2.setText(<span class="hljs-string">&quot;答题结束,您的得分为&quot;</span>+grade);<br>                    jb1.setEnabled(<span class="hljs-keyword">false</span>);<br>                    jb2.setEnabled(<span class="hljs-keyword">false</span>);<br>                &#125;<br>            &#125;<br>        &#125;);<br><br>        jb3.addActionListener(<span class="hljs-keyword">new</span> ActionListener() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">actionPerformed</span><span class="hljs-params">(ActionEvent e)</span> </span>&#123;<br>                nums=<span class="hljs-number">10</span>;<br>                grade=<span class="hljs-number">0</span>;<br>                jb1.setText(<span class="hljs-string">&quot;生成&quot;</span>);<br>                jLabel2.setText(<span class="hljs-string">&quot;算数测验,每次生成10道题&quot;</span>);<br>                jt1.setText(<span class="hljs-string">&quot;&quot;</span>);<br>                jt2.setText(<span class="hljs-string">&quot;&quot;</span>);<br>                jb1.setEnabled(<span class="hljs-keyword">true</span>);<br>            &#125;<br>        &#125;);<br>    &#125;<br><br>    <span class="hljs-comment">//随机数生产程序，用来生产算术题</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">gNums</span><span class="hljs-params">()</span> </span>&#123;<br>        String nums = <span class="hljs-string">&quot;&quot;</span>;<br>        Random random = <span class="hljs-keyword">new</span> Random();<br>        <span class="hljs-keyword">int</span> n1 = random.nextInt(<span class="hljs-number">100</span>);<br>        <span class="hljs-keyword">boolean</span> s = random.nextBoolean();<br>        <span class="hljs-keyword">int</span> n2 = random.nextInt(<span class="hljs-number">100</span>);<br>        nums += String.valueOf(n1);<br>        <span class="hljs-keyword">if</span> (s) &#123;<br>            nums += <span class="hljs-string">&quot;+&quot;</span>;<br>            rans = n1 + n2;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            nums += <span class="hljs-string">&quot;-&quot;</span>;<br>            rans = n1 - n2;<br>        &#125;<br>        nums += String.valueOf(n2);<br><br>        <span class="hljs-keyword">return</span> nums;<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>SakuraPure<br>
+        <strong>Link：</strong><a href="http://www.unmovia.com/article/9fcb1401.html" title="http:&#x2F;&#x2F;www.unmovia.com&#x2F;article&#x2F;9fcb1401.html" target="_blank" rel="noopener">http:&#x2F;&#x2F;www.unmovia.com&#x2F;article&#x2F;9fcb1401.html</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" rel="tag">程序设计</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src='https://cdn.jsdelivr.net/npm/valine'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'fl5iF63pP2A5yf9qzYF9lkbr-gzGzoHsz',
+        appKey: 'LdW6zxONNgn83DjfjV0xc3AL'
+    })
+</script>
+</section>
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="Search" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1670482220378"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+    <!-- CNZZ Analytics -->
+<div hidden>
+    <script src="//s95.cnzz.com/z_stat.php?id=&lt;script type=&#34;text/javascript&#34; src=&#34;https://s4.cnzz.com/z_stat.php?id=1280399118&amp;web_id=1280399118&#34;&gt;&lt;/script&gt;&web_id=&lt;script type=&#34;text/javascript&#34; src=&#34;https://s4.cnzz.com/z_stat.php?id=1280399118&amp;web_id=1280399118&#34;&gt;&lt;/script&gt;" language="JavaScript"></script>
+</div>
+
+
+
+
+</body>
+
+</html>
