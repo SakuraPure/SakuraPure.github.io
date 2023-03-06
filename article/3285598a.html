@@ -4,7 +4,7 @@
 
 <head>
     
-    <title>面向对象编程笔记 - 停舟之处</title>
+    <title>牛客模板101 BM5.合并K个有序列表 - 停舟之处</title>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -13,23 +13,24 @@
     
 
     <link rel="shortcut icon" href="https://s3.bmp.ovh/imgs/2021/10/1a8de202c4b7e426.png" type="image/png" />
-    <meta name="description" content="仍在更新中…">
+    <meta name="description" content="一个归并排序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面向对象编程笔记">
-<meta property="og:url" content="http://www.unmovia.com/article/fb2145ea.html">
+<meta property="og:title" content="牛客模板101 BM5.合并K个有序列表">
+<meta property="og:url" content="http://www.unmovia.com/article/3285598a.html">
 <meta property="og:site_name" content="停舟之处">
-<meta property="og:description" content="仍在更新中…">
+<meta property="og:description" content="一个归并排序">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-19T12:37:31.407Z">
-<meta property="article:modified_time" content="2022-10-19T12:58:06.739Z">
+<meta property="article:published_time" content="2023-03-06T13:26:58.529Z">
+<meta property="article:modified_time" content="2023-03-06T13:31:39.769Z">
 <meta property="article:author" content="SakuraPure">
-<meta property="article:tag" content="学习">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="归并排序">
 <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
-    <link rel="stylesheet" href="/css/style.css?v=1678109552811">
+    <link rel="stylesheet" href="/css/style.css?v=1678109552797">
      
     
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1678109552811">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1678109552797">
     
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="停舟之处" type="application/atom+xml">
 </head>
@@ -201,26 +202,37 @@
   <article>
       
           <div class="nexmoe-post-cover" style="padding-bottom: NaN%;"> 
-              <img data-src="https://s3.bmp.ovh/imgs/2022/10/19/3ba3ba140af5d30c.jpg" data-sizes="auto" alt="面向对象编程笔记" class="lazyload">
-              <h1>面向对象编程笔记</h1>
+              <img data-src="https://gcore.jsdelivr.net/gh/SakuraPure/Pic/img/stock-photo-1059898989.jpg" data-sizes="auto" alt="牛客模板101 BM5.合并K个有序列表" class="lazyload">
+              <h1>牛客模板101 BM5.合并K个有序列表</h1>
           </div>
       
       
       <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2022年10月19日</a>
-    <a><i class="nexmoefont icon-areachart"></i>543 字</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2023年03月06日</a>
+    <a><i class="nexmoefont icon-areachart"></i>440 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
 </div>
 
       
 
-      <p>仍在更新中…<span id="more"></span></p>
+      <p>一个归并排序<span id="more"></span></p>
+<h1 id="BM5"><a href="#BM5" class="headerlink" title="BM5"></a>BM5</h1><p>两个有序列表合并成一个列表首先想到归并排序，在本题中两个有序链表合并为一个链表为子问题，按照归并排序的操作，步骤如下：</p>
+<ol>
+<li>从链表数组的首和尾开始每次从中间进行二分。</li>
+<li>不断进行递归划分，直到每个链表数组中的链表数为1。</li>
+<li>将划分好的链表合并回溯最后合并成为一个大链表。</li>
+</ol>
+<p>对于这个递归问题，微操作是将链表合并为一个链表</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//合并链表</span><br>    <span class="hljs-function">ListNode* <span class="hljs-title">Merge2</span><span class="hljs-params">(ListNode* pHead1,ListNode* pHead2)</span></span>&#123;<br>        <span class="hljs-comment">//一个为空直接返回另一个</span><br>        <span class="hljs-keyword">if</span>(!pHead1)<span class="hljs-keyword">return</span> pHead2;<br>        <span class="hljs-keyword">if</span>(!pHead2)<span class="hljs-keyword">return</span> pHead1;<br><br>        ListNode* head=<span class="hljs-keyword">new</span> <span class="hljs-built_in">ListNode</span>(<span class="hljs-number">0</span>);<br>        ListNode* p=head;<br><br>        <span class="hljs-keyword">while</span>(pHead1&amp;&amp;pHead2)&#123;<br>            <span class="hljs-keyword">if</span>(pHead1-&gt;val&lt;=pHead2-&gt;val)&#123;<br>                p-&gt;next=pHead1;<br>                pHead1=pHead1-&gt;next;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                p-&gt;next=pHead2;<br>                pHead2=pHead2-&gt;next;<br>            &#125;<br>            p=p-&gt;next;<br>        &#125;<br><br>        <span class="hljs-comment">//处理剩余表</span><br>        <span class="hljs-keyword">if</span>(pHead1)p-&gt;next=pHead1;<br>        <span class="hljs-keyword">else</span> p-&gt;next=pHead2;<br><br>        <span class="hljs-keyword">return</span> head-&gt;next;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>合并操作写好后设计递归，这里递归是进行拆分</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function">ListNode* <span class="hljs-title">divideMerge</span><span class="hljs-params">(vector&lt;ListNode *&gt; &amp;lists,<span class="hljs-keyword">int</span> left,<span class="hljs-keyword">int</span> right)</span></span>&#123;<br>				<span class="hljs-comment">//空表直接返回空指针</span><br>        <span class="hljs-keyword">if</span>(lists.<span class="hljs-built_in">empty</span>())<span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;<br>				<span class="hljs-comment">//中间一个时</span><br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(left==right)<span class="hljs-keyword">return</span> lists[left];<br>        <span class="hljs-keyword">int</span> mid = (left+right)/<span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Merge2</span>(<span class="hljs-built_in">divideMerge</span>(lists,left,mid),<span class="hljs-built_in">divideMerge</span>(lists,mid+<span class="hljs-number">1</span>,right));<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>最后在主函数里调用操作</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function">ListNode *<span class="hljs-title">mergeKLists</span><span class="hljs-params">(vector&lt;ListNode *&gt; &amp;lists)</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">divideMerge</span>(lists, <span class="hljs-number">0</span>, lists.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>);<br>    &#125;<br></code></pre></td></tr></table></figure>
+
 <hr>
-<h3 id="静态字段和静态方法"><a href="#静态字段和静态方法" class="headerlink" title="静态字段和静态方法"></a>静态字段和静态方法</h3><h4 id="静态字段"><a href="#静态字段" class="headerlink" title="静态字段"></a>静态字段</h4><p>不推荐用实例变量.静态字段去访问静态字段，因为在java程序中，实例对象并没有静态字段。编译器可以根据实例类型自动转换为类名.静态字段来访问静态字段。<br>可以把静态字段理解为描述class本身的字段。</p>
-<h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>调用静态方法必须通过一个是来变量，但调用静态方法可以直接通过类名来调用。<br>因为静态方法属于class而不属于实例。</p>
-<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>在继承关系中，子类如果定义了一个与父类方法签名完全相同的方法，被称为覆写（Override）。<br>方法名相同，方法参数不同，是不同的方法。<br>方法名相同，方法返回值不同，是不同的方法。<br>java的实例方法调用是基于运行时的实际类型的动态调用，而不是变量的声明类型。<br>多态是指，针对某个类型的方法调用，其真正执行的方法取决于运行时期实际类型的方法。<br>多态的特性就是运行时才能动态决定调用的子类方法。<br>在子类的覆写方法中，如果要调用父类被覆写的方法，可以通过super来调用。<br>用final修饰的方法不能被覆写。<br>用final修饰的类不能被继承。<br>用final修饰的字段在初始化后不能被修改。</p>
-<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><p>如果父类的方法目的是让子类去覆写他本身没有任何功能，可以把父类的方法定义成abstract方法。<br>类包含抽象方法必须把类本身也声明为abstract才能正确编译他。这样的类就是抽象类，我们无法实例化抽象类。<br>我们可以通过抽象类去引用具体子类的实例。</p>
-<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>如果一个抽象类只有抽象方法，就可以把该抽象类改写为接口:interface<br>接口的方法的修饰字段不用写出来都是public abstract。</p>
+<p>这个解法主要是考察了归并排序的操作，在普通归并排序中，划分到最后每个数组只有一个元素是保证有序的，在进行合并的回溯。而本题中拆分到最后每一个单独的链表是有序的，所以是一个单纯的归并排序。</p>
 
   </article>
 
@@ -228,7 +240,7 @@
       
     <div class="nexmoe-post-copyright">
         <strong>Author：</strong>SakuraPure<br>
-        <strong>Link：</strong><a href="http://www.unmovia.com/article/fb2145ea.html" title="http:&#x2F;&#x2F;www.unmovia.com&#x2F;article&#x2F;fb2145ea.html" target="_blank" rel="noopener">http:&#x2F;&#x2F;www.unmovia.com&#x2F;article&#x2F;fb2145ea.html</a><br>
+        <strong>Link：</strong><a href="http://www.unmovia.com/article/3285598a.html" title="http:&#x2F;&#x2F;www.unmovia.com&#x2F;article&#x2F;3285598a.html" target="_blank" rel="noopener">http:&#x2F;&#x2F;www.unmovia.com&#x2F;article&#x2F;3285598a.html</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
         
@@ -239,10 +251,10 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow">
     
-        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%89%9B%E5%AE%A2/">牛客</a>
     
     
-        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" rel="tag">归并排序</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
     
 </div>
 
@@ -274,7 +286,7 @@
                               <button class="mdui-fab catalog" style="overflow:unset;">
                                   <i class="nexmoefont icon-i-catalog"></i>
                                   <div class="nexmoe-toc">
-                                      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%AD%97%E6%AE%B5%E5%92%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">静态字段和静态方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%AD%97%E6%AE%B5"><span class="toc-number">1.1.</span> <span class="toc-text">静态字段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">静态方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-number">2.</span> <span class="toc-text">多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="toc-number">3.</span> <span class="toc-text">抽象类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-number">4.</span> <span class="toc-text">接口</span></a></li></ol>
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#BM5"><span class="toc-number">1.</span> <span class="toc-text">BM5</span></a></li></ol>
                                   </div>
                               </button>
                           
@@ -306,7 +318,7 @@
 
  
 
-<script async src="/js/app.js?v=1678109552812"></script>
+<script async src="/js/app.js?v=1678109552800"></script>
 
 
 
