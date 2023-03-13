@@ -6,7 +6,7 @@
   <link href="http://www.unmovia.com/atom.xml" rel="self"/>
   
   <link href="http://www.unmovia.com/"/>
-  <updated>2023-03-11T13:26:13.588Z</updated>
+  <updated>2023-03-13T10:30:42.950Z</updated>
   <id>http://www.unmovia.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>牛客模板101 BM6.判断链表中是否有环</title>
+    <link href="http://www.unmovia.com/article/fc6d5429"/>
+    <id>http://www.unmovia.com/article/fc6d5429</id>
+    <published>2023-03-13T10:28:22.356Z</published>
+    <updated>2023-03-13T10:30:42.950Z</updated>
+    
+    <content type="html"><![CDATA[<p>双指针解法，下一个哈希表<span id="more"></span></p><p>原题链接：<a href="https://www.nowcoder.com/practice/650474f313294468a4ded3ce0f7898b9?tpId=295&tqId=605&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=/exam/oj">判断链表中是否有环_牛客题霸_牛客网 (nowcoder.com)</a></p><p>双指针的思路非常简单易懂，一个快指针一下跑两步，一个慢指针一步一步跑，把这俩指针想象成两个人跑圈，快的那个迟早遇到慢的那个</p><p>当相遇时，慢指针跑了$x+y$,快指针跑了$(x+y)*2$,相遇。</p><p>代码部分:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">hasCycle</span><span class="hljs-params">(ListNode *head)</span> </span>&#123;<br>        ListNode* f=head;<br>        ListNode* s=head;<br>        <span class="hljs-keyword">while</span>(f!=<span class="hljs-literal">NULL</span>&amp;&amp;f-&gt;next!=<span class="hljs-literal">NULL</span>)&#123;<br>                f=f-&gt;next-&gt;next;<br>                s=s-&gt;next;<br>                <span class="hljs-keyword">if</span>(f==s)<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;双指针解法，下一个哈希表</summary>
+    
+    
+    
+    <category term="牛客" scheme="http://www.unmovia.com/categories/%E7%89%9B%E5%AE%A2/"/>
+    
+    
+    <category term="算法" scheme="http://www.unmovia.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="双指针" scheme="http://www.unmovia.com/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
   
   <entry>
     <title>CET4英语4级作文模板---应用文</title>

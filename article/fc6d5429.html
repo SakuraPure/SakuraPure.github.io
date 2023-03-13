@@ -4,7 +4,7 @@
 
 <head>
     
-    <title>Archive：2021/11 - 停舟之处</title>
+    <title>牛客模板101 BM6.判断链表中是否有环 - 停舟之处</title>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -13,18 +13,24 @@
     
 
     <link rel="shortcut icon" href="https://s3.bmp.ovh/imgs/2021/10/1a8de202c4b7e426.png" type="image/png" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="停舟之处">
-<meta property="og:url" content="http://www.unmovia.com/archives/2021/11/">
+    <meta name="description" content="双指针解法，下一个哈希表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="牛客模板101 BM6.判断链表中是否有环">
+<meta property="og:url" content="http://www.unmovia.com/article/fc6d5429">
 <meta property="og:site_name" content="停舟之处">
+<meta property="og:description" content="双指针解法，下一个哈希表">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-13T10:28:22.356Z">
+<meta property="article:modified_time" content="2023-03-13T10:30:42.950Z">
 <meta property="article:author" content="SakuraPure">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="双指针">
 <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
-    <link rel="stylesheet" href="/css/style.css?v=1678703485436">
+    <link rel="stylesheet" href="/css/style.css?v=1678703485358">
      
     
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1678703485436">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1678703485358">
     
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="停舟之处" type="application/atom+xml">
 </head>
@@ -198,33 +204,73 @@
     </div>
     <div id="nexmoe-content">
         <div class="nexmoe-primary">
-            <section class="nexmoe-posts">
-    
-    <div class="nexmoe-post">
-        <a href="/article/3abedcb7">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: NaN%;"> 
-                    <img data-src="https://s3.bmp.ovh/imgs/2021/11/a85c5a70933e16dc.jpg" data-sizes="auto" alt="英语笔记2" class="lazyload">
-                    <h1>英语笔记2</h1>
-                </div>
-            
-        </a>
+            <div class="nexmoe-post">
 
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2021年11月01日</a>
-            <a><i class="nexmoefont icon-areachart"></i>570 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-        </div>
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: NaN%;"> 
+              <img data-src="https://s3.bmp.ovh/imgs/2023/03/13/143f94054bf387a1.png" data-sizes="auto" alt="牛客模板101 BM6.判断链表中是否有环" class="lazyload">
+              <h1>牛客模板101 BM6.判断链表中是否有环</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2023年03月13日</a>
+    <a><i class="nexmoefont icon-areachart"></i>161 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+</div>
 
-        <article>
-            
-                <p>不记就忘
-            
-        </article>
+      
+
+      <p>双指针解法，下一个哈希表<span id="more"></span></p>
+<p>原题链接：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/650474f313294468a4ded3ce0f7898b9?tpId=295&tqId=605&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=/exam/oj">判断链表中是否有环_牛客题霸_牛客网 (nowcoder.com)</a></p>
+<p>双指针的思路非常简单易懂，一个快指针一下跑两步，一个慢指针一步一步跑，把这俩指针想象成两个人跑圈，快的那个迟早遇到慢的那个</p>
+<p>当相遇时，慢指针跑了$x+y$,快指针跑了$(x+y)*2$,相遇。</p>
+<p>代码部分:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">hasCycle</span><span class="hljs-params">(ListNode *head)</span> </span>&#123;<br>        ListNode* f=head;<br>        ListNode* s=head;<br>        <span class="hljs-keyword">while</span>(f!=<span class="hljs-literal">NULL</span>&amp;&amp;f-&gt;next!=<span class="hljs-literal">NULL</span>)&#123;<br>                f=f-&gt;next-&gt;next;<br>                s=s-&gt;next;<br>                <span class="hljs-keyword">if</span>(f==s)<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>SakuraPure<br>
+        <strong>Link：</strong><a href="http://www.unmovia.com/article/fc6d5429" title="http:&#x2F;&#x2F;www.unmovia.com&#x2F;article&#x2F;fc6d5429" target="_blank" rel="noopener">http:&#x2F;&#x2F;www.unmovia.com&#x2F;article&#x2F;fc6d5429</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
     </div>
-    
-</section>
 
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%89%9B%E5%AE%A2/">牛客</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src='https://cdn.jsdelivr.net/npm/valine'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'fl5iF63pP2A5yf9qzYF9lkbr-gzGzoHsz',
+        appKey: 'LdW6zxONNgn83DjfjV0xc3AL'
+    })
+</script>
+</section>
+      </div>
+  
+</div>
             <div class="nexmoe-post-right">
               <div class="nexmoe-fixed">
                   <div class="nexmoe-tool"> 
@@ -261,7 +307,7 @@
 
  
 
-<script async src="/js/app.js?v=1678703485437"></script>
+<script async src="/js/app.js?v=1678703485360"></script>
 
 
 
