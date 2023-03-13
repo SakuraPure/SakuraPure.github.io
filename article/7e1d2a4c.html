@@ -4,7 +4,7 @@
 
 <head>
     
-    <title>Tags：算法 - 停舟之处</title>
+    <title>牛客模板101 BM7.链表中环的入口结点 - 停舟之处</title>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -13,18 +13,24 @@
     
 
     <link rel="shortcut icon" href="https://s3.bmp.ovh/imgs/2021/10/1a8de202c4b7e426.png" type="image/png" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="停舟之处">
-<meta property="og:url" content="http://www.unmovia.com/tags/%E7%AE%97%E6%B3%95/">
+    <meta name="description" content="哈希表的计数统计应用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="牛客模板101 BM7.链表中环的入口结点">
+<meta property="og:url" content="http://www.unmovia.com/article/7e1d2a4c">
 <meta property="og:site_name" content="停舟之处">
+<meta property="og:description" content="哈希表的计数统计应用">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-13T10:55:15.377Z">
+<meta property="article:modified_time" content="2023-03-13T10:55:15.620Z">
 <meta property="article:author" content="SakuraPure">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="哈希">
 <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
-    <link rel="stylesheet" href="/css/style.css?v=1678704981541">
+    <link rel="stylesheet" href="/css/style.css?v=1678704981488">
      
     
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1678704981541">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1678704981488">
     
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="停舟之处" type="application/atom+xml">
 </head>
@@ -198,125 +204,72 @@
     </div>
     <div id="nexmoe-content">
         <div class="nexmoe-primary">
-            <section class="nexmoe-posts">
-    
-    <div class="nexmoe-post">
-        <a href="/article/7e1d2a4c">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: NaN%;"> 
-                    <img data-src="https://s3.bmp.ovh/imgs/2023/03/13/b38fcfcef7542970.png" data-sizes="auto" alt="牛客模板101 BM7.链表中环的入口结点" class="lazyload">
-                    <h1>牛客模板101 BM7.链表中环的入口结点</h1>
-                </div>
-            
-        </a>
+            <div class="nexmoe-post">
 
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年03月13日</a>
-            <a><i class="nexmoefont icon-areachart"></i>136 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-        </div>
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: NaN%;"> 
+              <img data-src="https://s3.bmp.ovh/imgs/2023/03/13/b38fcfcef7542970.png" data-sizes="auto" alt="牛客模板101 BM7.链表中环的入口结点" class="lazyload">
+              <h1>牛客模板101 BM7.链表中环的入口结点</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2023年03月13日</a>
+    <a><i class="nexmoefont icon-areachart"></i>136 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+</div>
 
-        <article>
-            
-                <p>哈希表的计数统计应用
-            
-        </article>
+      
+
+      <p>哈希表的计数统计应用<span id="more"></span></p>
+<p>原题链接:<a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/253d2c59ec3e4bc68da16833f79a38e4?tpId=295&tqId=23449&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=/exam/oj">链表中环的入口结点_牛客题霸_牛客网 (nowcoder.com)</a></p>
+<p>使用哈希表记录每个节点出现的次数，然后判断一个结点是否已经访问过，访问过即次数为2，就弹出该节点。</p>
+<p>代码实现:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;unordered_map&gt;</span></span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">ListNode* <span class="hljs-title">EntryNodeOfLoop</span><span class="hljs-params">(ListNode* pHead)</span> </span>&#123;<br>            unordered_map&lt;<span class="hljs-keyword">int</span>,<span class="hljs-keyword">int</span>&gt; ump;<br>            ListNode* p=pHead;<br>            <span class="hljs-keyword">while</span>(p)&#123;<br>                ump[p-&gt;val]++;<br>                <span class="hljs-keyword">if</span>(p-&gt;next==p)<span class="hljs-keyword">return</span> p;<br>                <span class="hljs-keyword">if</span>(ump[p-&gt;val]==<span class="hljs-number">2</span>)<span class="hljs-keyword">return</span> p;<br>                p=p-&gt;next;<br>            &#125;<br>           <span class="hljs-keyword">return</span> p;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>SakuraPure<br>
+        <strong>Link：</strong><a href="http://www.unmovia.com/article/7e1d2a4c" title="http:&#x2F;&#x2F;www.unmovia.com&#x2F;article&#x2F;7e1d2a4c" target="_blank" rel="noopener">http:&#x2F;&#x2F;www.unmovia.com&#x2F;article&#x2F;7e1d2a4c</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
     </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
     
-    <div class="nexmoe-post">
-        <a href="/article/fc6d5429">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: NaN%;"> 
-                    <img data-src="https://s3.bmp.ovh/imgs/2023/03/13/143f94054bf387a1.png" data-sizes="auto" alt="牛客模板101 BM6.判断链表中是否有环" class="lazyload">
-                    <h1>牛客模板101 BM6.判断链表中是否有环</h1>
-                </div>
-            
-        </a>
-
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年03月13日</a>
-            <a><i class="nexmoefont icon-areachart"></i>161 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-        </div>
-
-        <article>
-            
-                <p>双指针解法，下一个哈希表
-            
-        </article>
-    </div>
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%89%9B%E5%AE%A2/">牛客</a>
     
-    <div class="nexmoe-post">
-        <a href="/article/3285598a">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: NaN%;"> 
-                    <img data-src="https://gcore.jsdelivr.net/gh/SakuraPure/Pic/img/stock-photo-1059898989.jpg" data-sizes="auto" alt="牛客模板101 BM5.合并K个有序列表" class="lazyload">
-                    <h1>牛客模板101 BM5.合并K个有序列表</h1>
-                </div>
-            
-        </a>
-
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年03月06日</a>
-            <a><i class="nexmoefont icon-areachart"></i>440 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-        </div>
-
-        <article>
-            
-                <p>一个归并排序
-            
-        </article>
-    </div>
     
-    <div class="nexmoe-post">
-        <a href="/article/3ad804ff">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: NaN%;"> 
-                    <img data-src="https://s3.bmp.ovh/imgs/2021/10/a65c5a482377bc9e.jpg" data-sizes="auto" alt="没入门算法题——结构体初试探" class="lazyload">
-                    <h1>没入门算法题——结构体初试探</h1>
-                </div>
-            
-        </a>
-
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2021年10月08日</a>
-            <a><i class="nexmoefont icon-areachart"></i>931 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
-        </div>
-
-        <article>
-            
-                <p>刚刚结构体做的第一个题，但是因为大佬觉得struct太屑，让我用class，嘛，反正对于这类简单的结构体题都差不多
-            
-        </article>
-    </div>
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%93%88%E5%B8%8C/" rel="tag">哈希</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
     
-    <div class="nexmoe-post">
-        <a href="/article/4e10f1c8">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: NaN%;"> 
-                    <img data-src="https://s3.bmp.ovh/imgs/2021/10/92039ec37bf3dce9.jpg" data-sizes="auto" alt="没入门算法题——判断素数" class="lazyload">
-                    <h1>没入门算法题——判断素数</h1>
-                </div>
-            
-        </a>
+</div>
 
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2021年10月06日</a>
-            <a><i class="nexmoefont icon-areachart"></i>461 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-        </div>
-
-        <article>
-            
-                <p>我菜逼这个都不会写，赶紧写个题解记一记
-            
-        </article>
-    </div>
-    
+  
+      <div class="nexmoe-post-footer">
+          <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src='https://cdn.jsdelivr.net/npm/valine'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'fl5iF63pP2A5yf9qzYF9lkbr-gzGzoHsz',
+        appKey: 'LdW6zxONNgn83DjfjV0xc3AL'
+    })
+</script>
 </section>
-
+      </div>
+  
+</div>
             <div class="nexmoe-post-right">
               <div class="nexmoe-fixed">
                   <div class="nexmoe-tool"> 
@@ -353,7 +306,7 @@
 
  
 
-<script async src="/js/app.js?v=1678704981542"></script>
+<script async src="/js/app.js?v=1678704981490"></script>
 
 
 
